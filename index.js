@@ -4,6 +4,8 @@ let app = new Vue({
           allProducts: afterSchoolSubjects,
           cart: [],
           sortOption: '',
+          cartCount:0,
+          showProduct:true
         },
         methods: {
           addToCart: function(product) {
@@ -11,7 +13,12 @@ let app = new Vue({
             product.Spaces--;
             console.log("Added:", product.Location);
             console.log("Added:", product.Spaces);
+            this.cartCount++;
+            console.log(this.cartCount);
           },
+          showCheckout: function(){
+            this.showProduct = this.showProduct ? false : true
+          }
         },
         computed: {
           sortedProducts: function() {
