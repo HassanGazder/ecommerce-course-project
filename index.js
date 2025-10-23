@@ -7,6 +7,8 @@ let app = new Vue({
     sortOrder: "asc",
     cartCount: 0,
     showProduct: true,
+    username: '',
+    usernumber: ''
   },
   methods: {
     addToCart: function (product) {
@@ -42,6 +44,11 @@ let app = new Vue({
     // 5️⃣ Decrease cart count (total items in cart)
     this.cartCount--;
   }
+},
+placeOrder: function() {
+  alert("Order placed successfully!");
+  this.cart = [];
+  this.cartCount = 0;
 }
 
     
@@ -68,5 +75,6 @@ let app = new Vue({
 
       return sortedArray;
     },
+    
   },
 });
