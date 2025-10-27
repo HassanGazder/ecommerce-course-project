@@ -72,13 +72,13 @@
           <p>Quantity: {{items.quantity}}</p>
           <button v-on:click="removeFromCart(items)">Remove from cart</button><br><br>
 
-          <button v-on:click="showCheckout">Back to products</button><br><br>
-          <label for="text">Enter Your Name</label>
-          <input @input="validateInput" name="name" type="text" v-model="username">
-          <label for="number">Enter Your Number</label>
-          <input @input="validateInput" name="number" type="number" v-model="usernumber">
-          <button :disabled="!isFormValid" v-on:click="placeOrder">Place Order</button>
+          <!-- <button v-on:click="showCheckout">Back to products</button><br><br> -->
         </div>
+        <label for="text">Enter Your Name</label>
+        <input @input="validateInput" name="name" type="text" v-model="username">
+        <label for="number">Enter Your Number</label>
+        <input @input="validateInput" name="number" type="number" v-model="usernumber">
+        <button :disabled="!isFormValid" v-on:click="placeOrder">Place Order</button>
       </div>
     </div>
     <script src="products.js"></script>
