@@ -8,9 +8,15 @@ let app = new Vue({
     cartCount: 0,
     showProduct: true,
     username: '',
-    usernumber: ''
+    usernumber: '',
+    isFormValid: false
   },
   methods: {
+    validateInput: function() {
+      let userNamePattern = /^[a-zA-Z\s]+$/;
+      let userNumberPattern = /^\d{10}$/;
+      this.isFormValid = userNamePattern.test(this.username) && userNumberPattern.test(this.usernumber);
+    },
     addToCart: function (product) {
       let existingProduct = this.cart.find((item) => item.id === product.id);
       if (existingProduct) {
@@ -32,8 +38,11 @@ let app = new Vue({
   if (existing) {
     existing.quantity--;
 
-    // 3️⃣ Increase product availability again
-    product.Spaces++;
+     // Find the original product in allProducts and restore availability
+    let originalProduct = this.allProducts.find(p => p.id === product.id);
+    if (originalProduct) {
+      originalProduct.Spaces++;
+    }
 
     // 4️⃣ If quantity reaches 0, remove the item from the cart completely
     if (existing.quantity === 0) {

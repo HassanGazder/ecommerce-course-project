@@ -69,16 +69,15 @@
           <p>Subject : {{items.Subject}}</p>
           <p>Location: {{items.Location}}</p>
           <p>Price: {{items.Price}}</p>
-          <p>Availability: {{items.Spaces}}</p>
           <p>Quantity: {{items.quantity}}</p>
           <button v-on:click="removeFromCart(items)">Remove from cart</button><br><br>
 
           <button v-on:click="showCheckout">Back to products</button><br><br>
           <label for="text">Enter Your Name</label>
-          <input name="name" type="text" v-model="username">
+          <input @input="validateInput" name="name" type="text" v-model="username">
           <label for="number">Enter Your Number</label>
-          <input name="number" type="number" v-model="usernumber">
-          <button :disabled="username === '' || usernumber === '' " v-on:click="placeOrder">Place Order</button>
+          <input @input="validateInput" name="number" type="number" v-model="usernumber">
+          <button :disabled="!isFormValid" v-on:click="placeOrder">Place Order</button>
         </div>
       </div>
     </div>
