@@ -23,7 +23,7 @@
 
   <body>
     <div id="app">
-      <button v-on:click="showCheckout" :disabled="cartCount === 0">
+      <button v-on:click="showCheckout" :disabled="showProduct && cartCount === 0">
         Checkout
         <span class="fa-solid fa-cart-shopping"></span>{{cartCount}}</button
       ><br /><br />
@@ -39,7 +39,7 @@
 
         <label for="order">Order:</label><br />
         <input type="radio" value="asc" v-model="sortOrder" /> Ascending<br />
-        <input type="radio" value="desc" v-model="sortOrder" />
+        <input type="radio"   value="desc" v-model="sortOrder" />
         Descending<br /><br />
 
         <div

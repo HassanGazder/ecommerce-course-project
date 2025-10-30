@@ -1,0 +1,139 @@
+/* General Reset & Font */
+body {
+  background: #f8f9fc;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+/* Main App Container */
+#app {
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Cart Button */
+#app > button {
+  position: relative;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.fa-cart-shopping {
+  margin-left: 8px;
+}
+
+/* Sorting Section */
+label {
+  font-weight: 600;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+input[type="radio"] {
+  margin-right: 6px;
+  margin-bottom: 8px;
+}
+
+/* Product Cards */
+.product-card {
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Product Image */
+.product-card img {
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Product Info */
+.product-card p {
+  margin: 4px 0;
+  font-size: 15px;
+}
+
+.product-card button {
+  margin-top: 10px;
+}
+
+/* Checkout Page */
+h1 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 25px;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin: 10px 0 20px 0;
+  font-size: 15px;
+  transition: border 0.3s ease;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Place Order Button */
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #app {
+    padding: 20px;
+  }
+
+  .product-card img {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
