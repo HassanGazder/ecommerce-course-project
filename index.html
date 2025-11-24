@@ -33,7 +33,7 @@
         <div v-if="showProduct">
           <div class="product-grid">
             <div v-for="product in sortedProducts" :key="product.id" class="product-card">
-              <img :src="`http://localhost:3000/images/${product.Image}`" :alt="product.Subject" />
+              <img :src="`https://ecommerce-coursework-backend.onrender.com/images/${product.Image}`" :alt="product.Subject" />
               <div class="product-info">
                 <h5>{{product.Subject}}</h5>
                 <p><strong>Location:</strong> {{product.Location}}</p>
@@ -53,7 +53,7 @@
             <h3>Cart</h3>
             <div class="product-grid">
               <div v-for="item in cart" :key="item.id" class="product-card">
-                <img :src="`http://localhost:3000/images/${item.Image}`" :alt="item.Subject" />
+                <img :src="`https://ecommerce-coursework-backend.onrender.com/${item.Image}`" :alt="item.Subject" />
                 <div class="product-info">
                   <h5>{{item.Subject}}</h5>
                   <p><strong>Location:</strong> {{item.Location}}</p>

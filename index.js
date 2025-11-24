@@ -13,7 +13,7 @@ let app = new Vue({
   },
   created() {
     // Fetch products from backend
-    fetch("http://localhost:3000/collection/products")
+    fetch("https://ecommerce-coursework-backend.onrender.com/collection/products")
       .then(response => response.json())
       .then(data => {
         this.allProducts = data;
@@ -97,7 +97,7 @@ let app = new Vue({
   }
 
   // Step 1: Save order
-  fetch("http://localhost:3000/placeorder", {
+  fetch("https://ecommerce-coursework-backend.onrender.com/placeorder", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -111,7 +111,7 @@ let app = new Vue({
       console.log("Order saved:", data);
 
       // Step 2: Update spaces
-      return fetch("http://localhost:3000/update-spaces", {
+      return fetch("https://ecommerce-coursework-backend.onrender.com/update-spaces", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ cart: this.cart })
