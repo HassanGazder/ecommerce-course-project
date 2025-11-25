@@ -2,6 +2,7 @@ let app = new Vue({
   el: "#app",
   data: {
     allProducts: [],
+    searchText:'',
     cart: [],
     sortOption: "Subject",
     sortOrder: "asc",
@@ -77,18 +78,7 @@ let app = new Vue({
       this.showProduct = !this.showProduct;
     },
 
-    // placeOrder() {
-    //   if (this.cart.length === 0) {
-    //     alert("Cart is empty!");
-    //     return;
-    //   }
-    //   alert("Order placed successfully!");
-    //   this.cart = [];
-    //   this.cartCount = 0;
-    //   localStorage.removeItem('cart');
-    //   username = '';
-    //   usernumber = '';
-    // }
+   
     
     placeOrder() {
   if (this.cart.length === 0) {
@@ -132,7 +122,15 @@ let app = new Vue({
     .catch(err => {
       console.error("Error placing order:", err);
     });
-}
+},
+ searchLessons() {
+      fetch(`https://ecommerce-coursework-backend.onrender.com/search?search=${this.searchText}`)
+        .then((res) => res.json())
+        .then((data) => {
+          this.allProducts = data; // update product list from backend
+        })
+        .catch((err) => console.error("Search error:", err));
+    },
   },
   computed: {
     sortedProducts() {

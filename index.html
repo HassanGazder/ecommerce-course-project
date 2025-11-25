@@ -25,6 +25,7 @@
         <span class="cart-count">{{cartCount}}</span>
       </button>
     </div>
+    <input type="text" v-model="searchText" placeholder="Search lessons..." @input="searchLessons" class="form-control mb-4" />
 
     <div class="d-flex">
       <!-- LEFT SIDE -->
