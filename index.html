@@ -20,12 +20,12 @@
     <!-- HEADER -->
     <div class="app-header d-flex justify-content-between align-items-center mb-4">
       <h2 class="fw-bold">After School (Online Store)</h2>
+      <input width="50px" type="text" v-model="searchText" placeholder="Search lessons..." @input="searchLessons" class="form-control mb-3" />
       <button class="checkout-btn" @click="showCheckout" :disabled="showProduct && cartCount === 0">
         Checkout <span class="fa-solid fa-cart-shopping"></span>
         <span class="cart-count">{{cartCount}}</span>
       </button>
     </div>
-    <input type="text" v-model="searchText" placeholder="Search lessons..." @input="searchLessons" class="form-control mb-4" />
 
     <div class="d-flex">
       <!-- LEFT SIDE -->
