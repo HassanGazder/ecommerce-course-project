@@ -21,7 +21,7 @@
     <div class="app-header d-flex justify-content-between align-items-center mb-4">
       <h2 class="fw-bold">After School (Online Store)</h2>
       <input width="50px" type="text" v-model="searchText" placeholder="Search lessons..." @input="searchLessons" class="form-control mb-3" />
-      <button class="checkout-btn" @click="showCheckout" :disabled="showProduct && cartCount === 0">
+      <button class="checkout-btn" v-on:click="showCheckout" :disabled="showProduct && cartCount === 0">
         Checkout <span class="fa-solid fa-cart-shopping"></span>
         <span class="cart-count">{{cartCount}}</span>
       </button>
@@ -40,7 +40,7 @@
                 <p><strong>Location:</strong> {{product.Location}}</p>
                 <p><strong>Price:</strong> ${{product.Price}}</p>
                 <p><strong>Availability:</strong> {{product.Spaces}}</p>
-                <button :disabled="product.Spaces === 0" @click="addToCart(product)">
+                <button :disabled="product.Spaces === 0" v-on:click="addToCart(product)">
                   {{ product.Spaces === 0 ? "Sold Out" : "Add To Cart" }}
                 </button>
               </div>
@@ -60,7 +60,7 @@
                   <p><strong>Location:</strong> {{item.Location}}</p>
                   <p><strong>Price:</strong> ${{item.Price}}</p>
                   <p><strong>Quantity:</strong> {{item.quantity}}</p>
-                  <button @click="removeFromCart(item)">Remove</button>
+                  <button v-on:click="removeFromCart(item)">Remove</button>
                 </div>
               </div>
             </div>
@@ -72,7 +72,7 @@
               <input type="text" v-model="username" @input="validateInput" />
               <label>Enter Your Number</label>
               <input type="text" v-model="usernumber" @input="validateInput" />
-              <button class="place-order-btn" :disabled="!isFormValid" @click="placeOrder">
+              <button class="place-order-btn" :disabled="!isFormValid" v-on:click="placeOrder">
                 Place Order
               </button>
             </div>
