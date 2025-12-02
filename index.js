@@ -80,6 +80,7 @@ let app = new Vue({
       if (existing.quantity === 0) {
         this.cart = this.cart.filter((i) => i.id !== item.id);
       }
+      this.cartCount--;
 
       // 5. Update cart in local storage
       localStorage.setItem("cart", JSON.stringify(this.cart));
